@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Precificação Shopee</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header com logo -->
+    <div class="user-header">
+        <div class="logo-container">
+            <img src="LUCRECERTOLOGO.png" alt="Lucro Certo" class="logo">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="calculator-wrapper">
+            <!-- Seção de Entrada de Dados -->
+            <div class="input-section">
+                <!-- Toggle Programa de Frete Grátis -->
+                <div class="frete-section">
+                    <h2>PROGRAMA DE FRETE GRÁTIS DA SHOPEE</h2>
+                    <div class="toggle-container">
+                        <label class="toggle">
+                            <input type="checkbox" id="freteGratis" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="toggle-label">Sim</span>
+                    </div>
+                </div>
+
+                <!-- Custo do Produto -->
+                <div class="input-group">
+                    <label for="custoProduto">
+                        CUSTO DO PRODUTO
+                        <span class="help-icon" title="Valor que você paga pelo produto">?</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <span class="currency">R$</span>
+                        <input type="text" id="custoProduto" placeholder="0,00">
+                        <div class="multiplier-container">
+                            <span class="multiplier">1x</span>
+                            <div class="multiplier-arrows">
+                                <button type="button" class="arrow-up">▲</button>
+                                <button type="button" class="arrow-down">▼</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impostos -->
+                <div class="input-group">
+                    <label for="impostos">
+                        IMPOSTOS
+                        <span class="help-icon" title="Percentual de impostos sobre o produto">?</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <span class="currency">%</span>
+                        <input type="text" id="impostos" placeholder="0">
+                    </div>
+                </div>
+
+                <!-- Despesas Variáveis -->
+                <div class="input-group">
+                    <label for="despesasVariaveis">
+                        DESPESAS VARIÁVEIS
+                        <span class="help-icon" title="Custos variáveis como embalagem, etiquetas, etc.">?</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <span class="currency">R$</span>
+                        <input type="text" id="despesasVariaveis" placeholder="0,00">
+                    </div>
+                </div>
+
+                <!-- Custo Extra -->
+                <div class="input-group">
+                    <label for="custoExtra">
+                        CUSTO EXTRA
+                        <span class="help-icon" title="Custos adicionais não previstos">?</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <span class="currency">R$</span>
+                        <input type="text" id="custoExtra" placeholder="0,00">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção de Resultados -->
+            <div class="results-section">
+                <!-- Resultados Principais -->
+                <div class="main-results">
+                    <div class="result-item">
+                        <span class="result-label">Preço de Venda</span>
+                        <span class="result-value primary" id="precoVenda">R$ 5,00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Lucro por Venda</span>
+                        <span class="result-value primary" id="lucroPorVenda">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <!-- Grid de Resultados Secundários -->
+                <div class="secondary-results">
+                    <div class="result-box">
+                        <span class="result-label">Taxa da Shopee</span>
+                        <span class="result-value" id="taxaShopee">R$5,00</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="result-label">Valor dos Impostos</span>
+                        <span class="result-value" id="valorImpostos">R$0,00</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="result-label">Custo Total do Produto</span>
+                        <span class="result-value" id="custoTotal">R$0,00</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="result-label">Retorno sobre Produto</span>
+                        <span class="result-value" id="retornoProduto">0%</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="result-label">Markup %</span>
+                        <span class="result-value" id="markupPercent">0%</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="result-label">Markup X</span>
+                        <span class="result-value" id="markupX">0X</span>
+                    </div>
+                </div>
+
+                <!-- Margem de Lucro -->
+                <div class="margin-section">
+                    <h3>MARGEM DE LUCRO</h3>
+                    <div class="margin-slider-container">
+                        <input type="range" id="margemLucro" min="0" max="100" value="0" class="margin-slider">
+                        <span class="margin-value" id="margemValue">0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
